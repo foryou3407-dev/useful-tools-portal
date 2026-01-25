@@ -1,0 +1,199 @@
+/* 연봉 계산기 전용 스타일 */
+
+.calculator-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+/* 1. 입력 카드 */
+.input-card {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.input-field {
+    margin-bottom: 25px;
+}
+
+.input-field label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-main);
+    font-size: 1.05rem;
+}
+
+.input-with-unit {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-unit input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: inherit;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    padding-right: 70px;
+}
+
+.input-with-unit input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
+}
+
+.input-with-unit .unit {
+    position: absolute;
+    right: 20px;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.field-guide {
+    display: block;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+.full-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 18px;
+    font-size: 1.1rem;
+}
+
+/* 2. 영수증 스타일 결과창 */
+.receipt {
+    background: white;
+    border-radius: 0 0 4px 4px;
+    padding: 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: slideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.receipt-header {
+    background: #f8fafc;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px dashed #e2e8f0;
+}
+
+.receipt-header h3 {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.final-amount {
+    color: var(--text-main);
+}
+
+.final-amount .amount {
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.final-amount .won {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.receipt-body {
+    padding: 30px;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.main-item {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.deduction-list h4 {
+    font-size: 0.85rem;
+    color: #f43f5e;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.deduction-list .item-row span:last-child {
+    font-weight: 600;
+    color: #475569;
+}
+
+.receipt-footer {
+    padding: 20px 30px;
+    background: #fff1f2;
+}
+
+.total-deduction {
+    font-weight: 700;
+    color: #e11d48;
+    margin: 0;
+}
+
+.receipt-cutline {
+    height: 12px;
+    background: white;
+    background-image: radial-gradient(circle at 10px 12px, transparent 12px, white 13px);
+    background-size: 20px 20px;
+    margin-top: -1px;
+}
+
+.receipt-note {
+    padding: 15px 30px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    background: white;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+    .calculator-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .receipt {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}

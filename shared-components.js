@@ -9,7 +9,8 @@ class GlobalHeader extends HTMLElement {
         const path = window.location.pathname;
         const isSubPage = path.includes('/image-converter/') ||
             path.includes('/youtube-kit/') ||
-            path.includes('/counter/');
+            path.includes('/counter/') ||
+            path.includes('/salary/');
 
         // 2. 경로에 따른 링크 베이스 설정 (로컬 환경 및 호스팅 환경 대응)
         const base = isSubPage ? '../' : './';
@@ -22,7 +23,8 @@ class GlobalHeader extends HTMLElement {
                     <div class="nav-menu">
                         <a href="${base}image-converter/index.html" class="${path.includes('image-converter') ? 'active' : ''}">이미지 변환</a>
                         <a href="${base}youtube-kit/index.html" class="${path.includes('youtube-kit') ? 'active' : ''}">유튜브 키트</a>
-                        <a href="${base}counter/index.html" class="${path.includes('counter') ? 'active' : '' || path.includes('/counter')}">글자 수 세기</a>
+                        <a href="${base}counter/index.html" class="${path.includes('counter') ? 'active' : ''}">글자 수 세기</a>
+                        <a href="${base}salary/index.html" class="${path.includes('salary') ? 'active' : ''}">연봉 계산기</a>
                     </div>
                 </nav>
             </header>
