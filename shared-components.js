@@ -69,7 +69,7 @@ class GlobalHeader extends HTMLElement {
                                             <span class="menu-icon">✈️</span>
                                             <div class="menu-text">
                                                 <span class="menu-title">환율 계산기</span>
-                                                <span class="menu-desc">실시간 전 세계 환율 변환</span>
+                                                <span class="menu-desc">주요 국가 실시간 환율 계산</span>
                                             </div>
                                         </a>
                                     </div>
