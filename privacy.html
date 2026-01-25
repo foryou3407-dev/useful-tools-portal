@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보처리방침 - Tools Portal</title>
+    <link rel="stylesheet" href="globals.css">
+    <link rel="icon" href="https://fav.farm/🛠️">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .policy-container {
+            max-width: 800px;
+            margin: 60px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .policy-content h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .policy-content p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="shared-components.js"></script>
+    <global-header></global-header>
+
+    <main class="main-container">
+        <div class="policy-container">
+            <h1>개인정보처리방침</h1>
+            <div class="policy-content">
+                <p>유틸리티 포털(Tools Portal)은 사용자의 개인정보 보호를 최우선으로 생각합니다. 본 사이트의 개인정보 처리 방침은 다음과 같습니다.</p>
+
+                <h2>1. 개인정보의 수집 및 이용</h2>
+                <p>본 사이트는 사용자가 입력하는 어떠한 데이터(이미지, 텍스트, 급여 정보, 생년월일 등)도 <strong>서버에 저장하거나 수집하지 않습니다.</strong> 모든 계산 및 변환
+                    로직은 사용자의 브라우저(로컬)에서만 수행됩니다.</p>
+
+                <h2>2. 쿠키 및 통계 수집</h2>
+                <p>서비스 개선 및 방문 통계 분석을 위해 구글 애널리틱스(Google Analytics)를 사용하고 있습니다. 이를 통해 수집되는 정보는 개인을 식별할 수 없는 <strong>익명화된
+                        통계 정보</strong>입니다.</p>
+
+                <h2>3. 제3자 제공</h2>
+                <p>사용자의 데이터를 외부 서버로 전송하거나 제3자에게 제공하지 않습니다.</p>
+
+                <h2>4. 문의 사항</h2>
+                <p>서비스 이용 관련 문의는 프로젝트 관리자에게 연락 주시기 바랍니다.</p>
+            </div>
+            <a href="index.html" class="back-home">← 홈으로 돌아가기</a>
+        </div>
+    </main>
+
+    <global-footer></global-footer>
+</body>
+
+</html>

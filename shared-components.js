@@ -110,4 +110,30 @@ class GlobalHeader extends HTMLElement {
     }
 }
 
+class GlobalFooter extends HTMLElement {
+    connectedCallback() {
+        const path = window.location.pathname;
+        const isSubPage = path.includes('/image-converter/') ||
+            path.includes('/youtube-kit/') ||
+            path.includes('/counter/') ||
+            path.includes('/salary/') ||
+            path.includes('/age/') ||
+            path.includes('/currency/');
+
+        const base = isSubPage ? '../' : './';
+
+        this.innerHTML = `
+            <footer class="global-footer">
+                <div class="footer-container">
+                    <p>&copy; 2026 Tools Portal. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="${base}privacy.html">개인정보처리방침</a>
+                    </div>
+                </div>
+            </footer>
+        `;
+    }
+}
+
 customElements.define('global-header', GlobalHeader);
+customElements.define('global-footer', GlobalFooter);
