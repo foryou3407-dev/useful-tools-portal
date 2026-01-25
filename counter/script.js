@@ -45,6 +45,7 @@ copyBtn.addEventListener('click', () => {
 
     textInput.select();
     document.execCommand('copy');
+    alert('복사되었습니다.');
 
     // 버튼 텍스트 일시 변경 피드백
     const originalText = copyBtn.innerText;
