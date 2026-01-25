@@ -69,8 +69,139 @@ header.global-nav {
     transition: color 0.2s;
 }
 
-.nav-menu a:hover {
+.nav-menu a.active {
     color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Mega Menu Styles */
+.mega-menu-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mega-menu-trigger {
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 10px 0;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.mega-menu-trigger .arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+
+.mega-menu-wrapper:hover .mega-menu-trigger {
+    color: var(--primary-color);
+}
+
+.mega-menu-wrapper:hover .arrow {
+    transform: rotate(180deg);
+}
+
+/* 메뉴 오버레이 */
+.mega-menu-overlay {
+    position: absolute;
+    top: 100%;
+    right: -20px;
+    width: 600px;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.mega-menu-wrapper:hover .mega-menu-overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-content {
+    padding: 24px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    text-decoration: none;
+    color: var(--text-main);
+    border-radius: 12px;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.menu-item:hover {
+    background-color: #f0f7ff;
+    border-color: #e0e7ff;
+}
+
+.menu-item.active {
+    background-color: #f0f7ff;
+    border-color: var(--primary-color);
+}
+
+.menu-icon {
+    font-size: 1.8rem;
+    width: 48px;
+    height: 48px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.menu-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.menu-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .mega-menu-overlay {
+        width: calc(100vw - 40px);
+        right: -10px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .main-container {
