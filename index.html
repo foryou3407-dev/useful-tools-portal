@@ -44,6 +44,18 @@
             margin-top: 40px;
         }
 
+        @media (max-width: 1024px) {
+            .tool-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .tool-card {
             background: var(--card-bg);
             border-radius: 20px;
