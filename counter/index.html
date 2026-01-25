@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 글자 수 세기 - Tools Portal</title>
+    <link rel="stylesheet" href="../globals.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="global-nav">
+        <nav class="nav-container">
+            <a href="../index.html" class="nav-logo">Tools Portal</a>
+            <div class="nav-menu">
+                <a href="../index.html#tools">모든 도구</a>
+                <a href="../image-converter/index.html">이미지 변환</a>
+                <a href="../youtube-kit/index.html">유튜브 키트</a>
+                <a href="index.html" class="active">글자 수 세기</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="tool-intro">
+            <h1 class="page-title">실시간 글자 수 세기</h1>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">타이핑과 동시에 글자 수, 바이트, 단어 수를 정확하게
+                계산해 드립니다.</p>
+        </section>
+
+        <!-- 통계 대시보드 -->
+        <div class="dashboard-grid">
+            <div class="stat-card">
+                <span class="stat-label">공백 포함</span>
+                <span id="count-with-space" class="stat-value">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">공백 제외</span>
+                <span id="count-without-space" class="stat-value">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">바이트 (Byte)</span>
+                <span id="count-byte" class="stat-value">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">단어 수</span>
+                <span id="count-word" class="stat-value">0</span>
+            </div>
+        </div>
+
+        <!-- 텍스트 입력창 -->
+        <div class="input-area">
+            <textarea id="text-input" placeholder="여기에 내용을 입력하거나 붙여넣으세요. 실시간으로 계산됩니다." spellcheck="false"></textarea>
+            <div class="action-buttons">
+                <button id="reset-btn" class="secondary-btn">초기화</button>
+                <button id="copy-btn" class="primary-btn">전체 복사</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <p>&copy; 2026 Tools Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
