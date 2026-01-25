@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 환율 계산기 - Tools Portal</title>
+    <link rel="stylesheet" href="../globals.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script src="../shared-components.js"></script>
+    <global-header></global-header>
+
+    <main class="main-container">
+        <section class="tool-intro">
+            <h1 class="page-title">✈️ 실시간 환율 계산기</h1>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">전 세계 주요 통화를 실시간 환율로 간편하게 계산해
+                보세요.</p>
+        </section>
+
+        <section class="converter-area">
+            <div class="converter-card">
+                <!-- 기준 통화 -->
+                <div class="currency-row">
+                    <div class="select-group">
+                        <label>보내시는 통화</label>
+                        <select id="from-currency" class="currency-select">
+                            <option value="USD">USD - 미국 달러</option>
+                            <option value="KRW" selected>KRW - 대한민국 원</option>
+                            <option value="JPY">JPY - 일본 엔</option>
+                            <option value="EUR">EUR - 유럽 유로</option>
+                            <option value="CNY">CNY - 중국 위안</option>
+                            <option value="GBP">GBP - 영국 파운드</option>
+                            <option value="AUD">AUD - 호주 달러</option>
+                            <option value="CAD">CAD - 캐나다 달러</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="from-amount" value="1,000" maxlength="15">
+                    </div>
+                </div>
+
+                <!-- Swap 버튼 -->
+                <div class="swap-divider">
+                    <button id="swap-btn" class="swap-btn" title="통화 교체">
+                        <span class="swap-icon">⇅</span>
+                    </button>
+                </div>
+
+                <!-- 대상 통화 -->
+                <div class="currency-row">
+                    <div class="select-group">
+                        <label>받으시는 통화</label>
+                        <select id="to-currency" class="currency-select">
+                            <option value="USD" selected>USD - 미국 달러</option>
+                            <option value="KRW">KRW - 대한민국 원</option>
+                            <option value="JPY">JPY - 일본 엔</option>
+                            <option value="EUR">EUR - 유럽 유로</option>
+                            <option value="CNY">CNY - 중국 위안</option>
+                            <option value="GBP">GBP - 영국 파운드</option>
+                            <option value="AUD">AUD - 호주 달러</option>
+                            <option value="CAD">CAD - 캐나다 달러</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="to-amount" readonly class="readonly-input">
+                    </div>
+                </div>
+
+                <!-- 정보 출력 -->
+                <div class="info-footer">
+                    <div id="rate-text" class="rate-preview">환율 정보를 불러오는 중...</div>
+                    <div id="base-date" class="base-date">기준일: -</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="global-footer">
+        <p>&copy; 2026 Tools Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

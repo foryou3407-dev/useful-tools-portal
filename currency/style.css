@@ -1,0 +1,136 @@
+/* 실시간 환율 계산기 전용 스타일 */
+
+.converter-area {
+    max-width: 500px;
+    margin: 0 auto 80px;
+}
+
+.converter-card {
+    background: white;
+    padding: 30px;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+}
+
+.currency-row {
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 20px;
+    border: 1px solid #edf2f7;
+    transition: border-color 0.2s;
+}
+
+.currency-row:focus-within {
+    border-color: var(--primary-color);
+    background: white;
+}
+
+.select-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.currency-select {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    cursor: pointer;
+    font-family: inherit;
+    padding: 2px 0;
+}
+
+.currency-select:focus {
+    outline: none;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    font-family: inherit;
+    margin-top: 10px;
+}
+
+.input-group input:focus {
+    outline: none;
+}
+
+.readonly-input {
+    color: #475569 !important;
+}
+
+/* Swap 버튼 */
+.swap-divider {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.swap-btn {
+    width: 44px;
+    height: 44px;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.swap-btn:hover {
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.15);
+    border-color: var(--primary-color);
+}
+
+.swap-icon {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* 푸터 정보 */
+.info-footer {
+    margin-top: 25px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.rate-preview {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.base-date {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+    .converter-card {
+        padding: 20px;
+    }
+
+    .input-group input {
+        font-size: 1.5rem;
+    }
+}

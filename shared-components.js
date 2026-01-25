@@ -9,7 +9,8 @@ class GlobalHeader extends HTMLElement {
             path.includes('/youtube-kit/') ||
             path.includes('/counter/') ||
             path.includes('/salary/') ||
-            path.includes('/age/');
+            path.includes('/age/') ||
+            path.includes('/currency/');
 
         const base = isSubPage ? '../' : './';
 
@@ -62,6 +63,13 @@ class GlobalHeader extends HTMLElement {
                                             <div class="menu-text">
                                                 <span class="menu-title">나이 계산기</span>
                                                 <span class="menu-desc">만 나이 & 기념일 D-Day</span>
+                                            </div>
+                                        </a>
+                                        <a href="${base}currency/index.html" class="menu-item ${path.includes('currency') ? 'active' : ''}">
+                                            <span class="menu-icon">✈️</span>
+                                            <div class="menu-text">
+                                                <span class="menu-title">환율 계산기</span>
+                                                <span class="menu-desc">실시간 전 세계 환율 변환</span>
                                             </div>
                                         </a>
                                     </div>
