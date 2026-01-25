@@ -1,5 +1,5 @@
 /**
- * Tools Portal - 전역 공통 컴포넌트 (Mega Menu 리뉴얼 버전)
+ * Tools Portal - 전역 공통 컴포넌트 (UI/UX 개선 버전)
  */
 
 class GlobalHeader extends HTMLElement {
@@ -18,17 +18,16 @@ class GlobalHeader extends HTMLElement {
                     <a href="${base}index.html" class="nav-logo">Tools Portal</a>
                     
                     <div class="nav-menu">
-                        <!-- 메인 홈 링크 -->
-                        <a href="${base}index.html" class="${(!isSubPage && !path.includes('index.html')) || path.endsWith('/') || path.includes('index.html') ? 'active' : ''}">홈</a>
-                        
-                        <!-- 메가 메뉴 트리거 -->
-                        <div class="mega-menu-wrapper">
-                            <button class="mega-menu-trigger">도구 전체보기 <span class="arrow">▾</span></button>
+                        <!-- 메가 메뉴 wrapper -->
+                        <div class="mega-menu-wrapper" id="megaMenuWrapper">
+                            <button class="mega-menu-trigger" id="menuTrigger">
+                                도구 선택하기 <span class="arrow">▾</span>
+                            </button>
                             
-                            <!-- 실제 펼쳐지는 메뉴판 -->
+                            <!-- 세로 리스트형 메뉴판 -->
                             <div class="mega-menu-overlay">
                                 <div class="mega-menu-content">
-                                    <div class="menu-grid">
+                                    <div class="menu-list">
                                         <a href="${base}image-converter/index.html" class="menu-item ${path.includes('image-converter') ? 'active' : ''}">
                                             <span class="menu-icon">📸</span>
                                             <div class="menu-text">
@@ -65,6 +64,33 @@ class GlobalHeader extends HTMLElement {
                 </nav>
             </header>
         `;
+
+        this.initEventListeners();
+    }
+
+    initEventListeners() {
+        const wrapper = this.querySelector('#megaMenuWrapper');
+        const trigger = this.querySelector('#menuTrigger');
+
+        // 1. 클릭 토글
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            wrapper.classList.toggle('active');
+        });
+
+        // 2. 외부 클릭 시 닫기
+        document.addEventListener('click', (e) => {
+            if (!wrapper.contains(e.target)) {
+                wrapper.classList.remove('active');
+            }
+        });
+
+        // 3. 스크롤 시 닫기 (모바일 대응)
+        window.addEventListener('scroll', () => {
+            if (wrapper.classList.contains('active')) {
+                wrapper.classList.remove('active');
+            }
+        }, { passive: true });
     }
 }
 
