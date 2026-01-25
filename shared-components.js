@@ -8,7 +8,8 @@ class GlobalHeader extends HTMLElement {
         const isSubPage = path.includes('/image-converter/') ||
             path.includes('/youtube-kit/') ||
             path.includes('/counter/') ||
-            path.includes('/salary/');
+            path.includes('/salary/') ||
+            path.includes('/age/');
 
         const base = isSubPage ? '../' : './';
 
@@ -54,6 +55,13 @@ class GlobalHeader extends HTMLElement {
                                             <div class="menu-text">
                                                 <span class="menu-title">연봉 계산기</span>
                                                 <span class="menu-desc">2025 최신 실수령액 산출</span>
+                                            </div>
+                                        </a>
+                                        <a href="${base}age/index.html" class="menu-item ${path.includes('age') ? 'active' : ''}">
+                                            <span class="menu-icon">🎂</span>
+                                            <div class="menu-text">
+                                                <span class="menu-title">나이 계산기</span>
+                                                <span class="menu-desc">만 나이 & 기념일 D-Day</span>
                                             </div>
                                         </a>
                                     </div>
