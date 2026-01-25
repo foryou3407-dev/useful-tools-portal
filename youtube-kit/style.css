@@ -1,0 +1,197 @@
+/* 유튜브 도구 전용 스타일 */
+
+/* 1. 입력 영역 제어 */
+.input-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    border: 1px solid var(--border-color);
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+}
+
+.main-input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.main-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
+}
+
+.primary-btn {
+    padding: 14px 30px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.primary-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+/* 2. 결과 섹션 및 제목 */
+.result-section {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-info-box {
+    background: white;
+    padding: 24px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    border-left: 6px solid var(--primary-color);
+}
+
+.video-title {
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.section-guide {
+    background: #fffbeb;
+    color: #92400e;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    border-left: 5px solid #fbbf24;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+/* 3. 썸네일 그리드 & 카드 */
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.thumbnail-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.thumbnail-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.quality-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background: #eef5ff;
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    align-self: flex-start;
+}
+
+.img-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.thumbnail-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.no-thumb-msg {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border: 1px dashed #ced4da;
+    border-radius: 12px;
+    color: #adb5bd;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 20px;
+}
+
+.download-btn {
+    width: 100%;
+    padding: 12px;
+    background: #1e293b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.download-btn:hover {
+    background: #0f172a;
+}
+
+/* 공통 클래스 복구 */
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+    }
+
+    .thumbnail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1.page-title {
+        font-size: 2rem;
+    }
+}

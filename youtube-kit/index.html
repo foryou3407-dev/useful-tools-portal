@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 썸네일 & 제목 추출기 - Tools Portal</title>
+    <link rel="stylesheet" href="../globals.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="global-nav">
+        <nav class="nav-container">
+            <a href="../index.html" class="nav-logo">Tools Portal</a>
+            <div class="nav-menu">
+                <a href="../index.html#tools">모든 도구</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="tool-intro" style="text-align: center; margin-bottom: 40px;">
+            <h1 class="page-title">유튜브 썸네일 & 제목 추출기</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem;">유튜브 영상 주소만 넣으면 고화질 썸네일과 영상 제목을 즉시 추출해 드립니다.</p>
+        </section>
+
+        <section class="input-card">
+            <div class="input-group">
+                <input type="text" id="youtube-url" placeholder="https://www.youtube.com/watch?v=..."
+                    class="main-input">
+                <button id="analyze-btn" class="primary-btn">분석하기</button>
+            </div>
+        </section>
+
+        <!-- 결과 섹션 -->
+        <section id="result-section" class="result-section hidden">
+            <div class="video-info-box">
+                <h2 id="video-title" class="video-title">영상 제목을 가져오는 중...</h2>
+            </div>
+
+            <div class="guide-box">
+                <p class="section-guide">💡 이미지를 **마우스 오른쪽 버튼으로 클릭**하여 '이미지를 다른 이름으로 저장'을 선택하세요.</p>
+            </div>
+
+            <div id="thumbnail-grid" class="thumbnail-grid">
+                <!-- 최고화질 -->
+                <div class="thumbnail-card" id="card-max">
+                    <span class="quality-badge">Max Resolution (HD)</span>
+                    <div class="img-container">
+                        <img id="thumb-max" src="" alt="Max resolution">
+                    </div>
+                    <button class="download-btn" onclick="downloadImage('max')">이미지 크게 보기</button>
+                </div>
+                <!-- 고화질 -->
+                <div class="thumbnail-card" id="card-hq">
+                    <span class="quality-badge">High Quality (SD)</span>
+                    <div class="img-container">
+                        <img id="thumb-hq" src="" alt="High quality">
+                    </div>
+                    <button class="download-btn" onclick="downloadImage('hq')">이미지 크게 보기</button>
+                </div>
+                <!-- 중화질 -->
+                <div class="thumbnail-card" id="card-mq">
+                    <span class="quality-badge">Medium Quality</span>
+                    <div class="img-container">
+                        <img id="thumb-mq" src="" alt="Medium quality">
+                    </div>
+                    <button class="download-btn" onclick="downloadImage('mq')">이미지 크게 보기</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="global-footer">
+        <p>&copy; 2026 Tools Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

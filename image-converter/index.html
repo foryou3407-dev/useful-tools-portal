@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가입 없이 1초 만에! HEIC JPG 변환기 및 이미지 압축기</title>
+    <meta name="description" content="로그인 없이 1초 만에 아이폰 HEIC 파일을 JPG로 변환하고 용량까지 줄이세요. 서버 전송 없는 안전한 로컬 이미지 압축기입니다.">
+    <meta name="keywords" content="HEIC JPG 변환, 이미지 용량 줄이기, 사진 압축, 아이폰 사진 변환, 온라인 이미지 편집기, 무설치 이미지 압축">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="가입 없이 1초 만에! HEIC JPG 변환기 및 이미지 압축기">
+    <meta property="og:description" content="아이폰 HEIC 사진을 JPG로 초고속 변환하고 용량까지 최적화하세요. 100% 로컬 처리로 개인정보까지 안전하게!">
+    <meta property="og:image" content="https://your-domain.com/og-image.png">
+
+    <link rel="stylesheet" href="../globals.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="global-nav">
+        <nav class="nav-container">
+            <a href="../index.html" class="nav-logo">Tools Portal</a>
+            <div class="nav-menu">
+                <a href="../index.html#tools">모든 도구</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" style="margin-top: 40px;">
+        <header>
+            <h1>이미지 변환기</h1>
+            <p>가입 없이 1초 만에 HEIC를 JPG로 변환하고 용량을 줄여보세요.</p>
+        </header>
+
+        <main>
+            <section class="upload-section" id="drop-zone">
+                <input type="file" id="file-input" accept="image/*,.heic,.heif" hidden>
+                <div class="upload-content">
+                    <div class="icon">🚀</div>
+                    <p>이미지를 클릭하거나 여기에 드래그하여 바로 시작하세요</p>
+                    <span>JPG, PNG, HEIC 완벽 지원</span>
+                </div>
+            </section>
+
+            <section class="controls-section hidden" id="controls">
+                <div class="control-group">
+                    <label for="quality">압축 품질: <span id="quality-value">80</span>%</label>
+                    <input type="range" id="quality" min="1" max="100" value="80">
+                </div>
+                <div class="stats-info">
+                    <div class="stat-item">
+                        <span class="label">원본 용량</span>
+                        <span id="original-size" class="value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">압축 후 용량</span>
+                        <span id="compressed-size" class="value">-</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="preview-section hidden" id="preview-area">
+                <div class="preview-container">
+                    <div class="preview-box">
+                        <h3>원본</h3>
+                        <img id="original-preview" alt="원본 미리보기">
+                    </div>
+                    <div class="preview-box">
+                        <h3>압축 결과</h3>
+                        <img id="compressed-preview" alt="압축 미리보기">
+                    </div>
+                </div>
+                <div class="actions">
+                    <button id="download-btn" class="primary-btn">압축된 이미지 다운로드</button>
+                    <button id="reset-btn" class="secondary-btn">다시 하기</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="global-footer">
+        <p>&copy; 2026 Tools Portal. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

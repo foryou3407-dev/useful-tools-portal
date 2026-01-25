@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-20YSW8DKTW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-20YSW8DKTW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유틸리티 포털 - 한곳에서 해결하는 온라인 도구</title>
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap">
+    <style>
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .tool-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border: 1px solid transparent;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tool-card h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .tool-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #eef5ff;
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="global-nav">
+        <nav class="nav-container">
+            <a href="index.html" class="nav-logo">Tools Portal</a>
+            <div class="nav-menu">
+                <a href="#tools">모든 도구</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h1 class="page-title">모든 도구가 한곳에</h1>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 50px;">가입 없이 1초 만에 실행하는 다양한 유틸리티 도구를
+            만나보세요.</p>
+
+        <div class="tool-grid" id="tools">
+            <a href="image-converter/index.html" class="tool-card">
+                <div class="tool-icon">📸</div>
+                <h2>이미지 변환기</h2>
+                <p>HEIC를 JPG로 1초 만에 변환하고 이미지 용량을 최적으로 줄이세요.</p>
+                <div class="badge">인기</div>
+            </a>
+
+            <a href="youtube-kit/index.html" class="tool-card">
+                <div class="tool-icon">📺</div>
+                <h2>유튜브 만능 키트</h2>
+                <p>유튜브 썸네일 고화질 추출과 AI 3줄 영상 요약을 한 번에 이용하세요.</p>
+                <div class="badge">NEW</div>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.7; pointer-events: none;">
+                <div class="tool-icon">💰</div>
+                <h2>연봉 계산기</h2>
+                <p>세전 연봉으로 실수령액을 정확하게 계산해드립니다. (준비 중)</p>
+                <div class="badge" style="background: #eee; color: #888;">Coming Soon</div>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.7; pointer-events: none;">
+                <div class="tool-icon">✍️</div>
+                <h2>글자 수 세기</h2>
+                <p>공백 포함/제외 글자 수와 맞춤법 체크까지 한 번에. (준비 중)</p>
+                <div class="badge" style="background: #eee; color: #888;">Coming Soon</div>
+            </a>
+        </div>
+    </main>
+    <footer class="global-footer">
+        <p>&copy; 2026 Tools Portal. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
