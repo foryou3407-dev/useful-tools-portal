@@ -141,12 +141,7 @@ class GlobalHeader extends HTMLElement {
             }
         });
 
-        // 3. 스크롤 시 닫기 (모바일 대응)
-        window.addEventListener('scroll', () => {
-            if (wrapper.classList.contains('active')) {
-                wrapper.classList.remove('active');
-            }
-        }, { passive: true });
+
     }
 }
 
