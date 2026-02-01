@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="../shared-components.js" defer></script>
 </head>
+
 <body>
     <global-header></global-header>
 
     <main class="container">
         <section class="tool-header">
-            <h1>와이파이 QR 생성기</h1>
+            <h1 class="page-title">와이파이 QR 생성기</h1>
             <p class="subtitle">와이파이 정보를 입력하고 즉시 연결 가능한 QR 코드를 만드세요.</p>
         </section>
 
@@ -45,13 +47,13 @@
                     </div>
 
                     <button id="generate-btn" class="btn btn-primary btn-full">QR 코드 생성하기</button>
-                    
+
                     <div class="action-buttons">
                         <button id="download-btn" class="btn btn-secondary" disabled>이미지 저장</button>
                         <button id="print-btn" class="btn btn-secondary" disabled>카드 인쇄</button>
                     </div>
                 </div>
-                
+
                 <div class="usage-tip">
                     <h3>💡 팁</h3>
                     <ul>
@@ -85,4 +87,5 @@
     <global-footer></global-footer>
     <script src="script.js"></script>
 </body>
+
 </html>
