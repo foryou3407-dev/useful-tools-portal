@@ -37,77 +37,8 @@
     <title>유틸리티 포털 - 한곳에서 해결하는 온라인 도구</title>
 
     <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap">
-    <style>
-        .tool-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 1024px) {
-            .tool-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .tool-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .tool-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 30px;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            border: 1px solid transparent;
-        }
-
-        .tool-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .tool-icon {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .tool-card h2 {
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        .tool-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            background: #eef5ff;
-            color: var(--primary-color);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            align-self: flex-start;
-            margin-top: auto;
-        }
-    </style>
-</head>
-
-<script src="shared-components.js"></script>
 </head>
 
 <body>
@@ -115,89 +46,121 @@
 
     <main class="main-container">
         <h1 class="page-title">모든 도구가 한곳에</h1>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 50px;">가입 없이 1초 만에 실행하는 다양한 유틸리티 도구를
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">가입 없이 1초 만에 실행하는 다양한 유틸리티 도구를
             만나보세요.</p>
 
+        <!-- 카테고리 탭 -->
+        <div class="category-tabs">
+            <div class="tab-btn active" data-filter="all">전체</div>
+            <div class="tab-btn" data-filter="media">📸 미디어/이미지</div>
+            <div class="tab-btn" data-filter="finance">💰 금융/계산</div>
+            <div class="tab-btn" data-filter="life">🛠️ 생활/도구</div>
+        </div>
+
         <div class="tool-grid" id="tools">
-            <a href="image-converter/index.html" class="tool-card">
+            <a href="image-converter/index.html" class="tool-card" data-category="media">
                 <div class="tool-icon">📸</div>
-                <h2>이미지 변환기</h2>
-                <p>HEIC를 JPG로 1초 만에 변환하고 이미지 용량을 최적으로 줄이세요.</p>
+                <div class="tool-info">
+                    <h2>이미지 변환기</h2>
+                    <p>HEIC를 JPG로 1초 만에 변환하고 이미지 용량을 최적으로 줄이세요.</p>
+                </div>
                 <div class="badge">인기</div>
             </a>
 
-            <a href="youtube-kit/index.html" class="tool-card">
+            <a href="youtube-kit/index.html" class="tool-card" data-category="media">
                 <div class="tool-icon">📺</div>
-                <h2>유튜브 만능 키트</h2>
-                <p>유튜브 썸네일 고화질 추출과 영상 제목/태그를 한 번에 저장하세요.</p>
+                <div class="tool-info">
+                    <h2>유튜브 키트</h2>
+                    <p>유튜브 썸네일 고화질 추출과 영상 제목/태그를 한 번에 저장하세요.</p>
+                </div>
                 <div class="badge">NEW</div>
             </a>
 
-            <a href="counter/index.html" class="tool-card">
+            <a href="counter/index.html" class="tool-card" data-category="life">
                 <div class="tool-icon">✍️</div>
-                <h2>글자 수 세기</h2>
-                <p>공백 포함/제외 글자 수와 맞춤법 체크까지 한 번에.</p>
+                <div class="tool-info">
+                    <h2>글자 수 세기</h2>
+                    <p>공백 포함/제외 글자 수와 맞춤법 체크까지 한 번에.</p>
+                </div>
                 <div class="badge">NEW</div>
             </a>
 
-            <a href="salary/index.html" class="tool-card">
+            <a href="salary/index.html" class="tool-card" data-category="finance">
                 <div class="tool-icon">💰</div>
-                <h2>연봉 계산기</h2>
-                <p>세전 연봉으로 실수령액을 정확하게 계산해드립니다.</p>
+                <div class="tool-info">
+                    <h2>연봉 계산기</h2>
+                    <p>세전 연봉으로 실수령액을 정확하게 계산해드립니다.</p>
+                </div>
                 <div class="badge">추천</div>
             </a>
 
-            <a href="age/index.html" class="tool-card">
+            <a href="age/index.html" class="tool-card" data-category="life">
                 <div class="tool-icon">🎂</div>
-                <h2>나이 계산기</h2>
-                <p>만 나이, 연 나이부터 주요 기념일 D-Day까지 한 번에.</p>
+                <div class="tool-info">
+                    <h2>나이 계산기</h2>
+                    <p>만 나이, 연 나이부터 주요 기념일 D-Day까지 한 번에.</p>
+                </div>
                 <div class="badge">NEW</div>
             </a>
 
-            <a href="currency/index.html" class="tool-card">
+            <a href="currency/index.html" class="tool-card" data-category="finance">
                 <div class="tool-icon">✈️</div>
-                <h2>환율 계산기</h2>
-                <p>주요 국가의 실시간 환율 정보를 간편하게 확인하세요.</p>
+                <div class="tool-info">
+                    <h2>환율 계산기</h2>
+                    <p>주요 국가의 실시간 환율 정보를 간편하게 확인하세요.</p>
+                </div>
                 <div class="badge">NEW</div>
             </a>
 
-            <a href="wifi/index.html" class="tool-card">
+            <a href="wifi/index.html" class="tool-card" data-category="life">
                 <div class="tool-icon">📶</div>
-                <h2>와이파이 QR</h2>
-                <p>우리 집 와이파이 연결 QR 코드를 예쁜 카드로 만들어서 인쇄하세요.</p>
+                <div class="tool-info">
+                    <h2>와이파이 QR</h2>
+                    <p>우리 집 와이파이 연결 QR 코드를 예쁜 카드로 만들어서 인쇄하세요.</p>
+                </div>
                 <div class="badge">NEW</div>
             </a>
 
-            <a href="converter/index.html" class="tool-card">
+            <a href="converter/index.html" class="tool-card" data-category="finance">
                 <div class="tool-icon">🔄</div>
-                <h2>단위 변환기</h2>
-                <p>부동산 평수, 해외 직구 인치/파운드 변환을 1초 만에 해결하세요.</p>
+                <div class="tool-info">
+                    <h2>단위 변환기</h2>
+                    <p>부동산 평수, 해외 직구 인치/파운드 변환을 1초 만에 해결하세요.</p>
+                </div>
                 <div class="badge">NEW</div>
             </a>
 
-            <a href="recorder/index.html" class="tool-card">
+            <a href="recorder/index.html" class="tool-card" data-category="media">
                 <div class="tool-icon">📹</div>
-                <h2>무설치 화면 녹화기</h2>
-                <p>프로그램 설치 없이 브라우저에서 바로 화면을 녹화하고 소장하세요.</p>
+                <div class="tool-info">
+                    <h2>화면 녹화기</h2>
+                    <p>프로그램 설치 없이 브라우저에서 바로 화면을 녹화하고 소장하세요.</p>
+                </div>
                 <div class="badge">NEW</div>
             </a>
 
-            <a href="ocr/index.html" class="tool-card">
+            <a href="ocr/index.html" class="tool-card" data-category="media">
                 <div class="tool-icon">👁️</div>
-                <h2>이미지 텍스트 변환</h2>
-                <p>영수증, 명함, 스캔본 속의 글자를 AI가 읽어서 텍스트로 바꿔드립니다.</p>
+                <div class="tool-info">
+                    <h2>이미지 텍스트 변환</h2>
+                    <p>영수증, 명함, 스캔본 속의 글자를 AI가 읽어서 텍스트로 바꿔드립니다.</p>
+                </div>
                 <div class="badge">NEW</div>
             </a>
 
-            <a href="link/index.html" class="tool-card">
+            <a href="link/index.html" class="tool-card" data-category="life">
                 <div class="tool-icon">🔗</div>
-                <h2>URL 단축기</h2>
-                <p>긴 주소를 짧게 줄이고 스마트폰 접속을 위한 QR 코드도 바로 만드세요.</p>
+                <div class="tool-info">
+                    <h2>URL 단축기</h2>
+                    <p>긴 주소를 짧게 줄이고 스마트폰 접속을 위한 QR 코드도 바로 만드세요.</p>
+                </div>
                 <div class="badge">NEW</div>
             </a>
         </div>
     </main>
     <global-footer></global-footer>
+    <script src="shared-components.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

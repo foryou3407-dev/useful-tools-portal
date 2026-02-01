@@ -26,7 +26,7 @@
     color: var(--text-color);
 }
 
-.input-group input, 
+.input-group input,
 .input-group select {
     width: 100%;
     padding: 12px;
@@ -109,7 +109,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     color: #333;
     position: relative;
     overflow: hidden;
@@ -188,12 +188,21 @@
     body * {
         visibility: hidden;
     }
-    .global-header, .global-footer, .tool-header, .input-section, .action-buttons, .usage-tip {
+
+    .global-header,
+    .global-footer,
+    .tool-header,
+    .input-section,
+    .action-buttons,
+    .usage-tip {
         display: none !important;
     }
-    .preview-section, .preview-section * {
+
+    .preview-section,
+    .preview-section * {
         visibility: visible;
     }
+
     .preview-section {
         position: absolute;
         left: 0;
@@ -204,6 +213,7 @@
         align-items: center;
         height: 100vh;
     }
+
     .wifi-card {
         box-shadow: none;
         border: 1px solid #eee;

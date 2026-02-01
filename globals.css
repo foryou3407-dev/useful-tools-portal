@@ -264,3 +264,87 @@ h1.page-title {
 .footer-links a:hover {
     color: var(--primary-color);
 }
+
+/* Global Buttons & UI Components */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    font-family: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(1);
+    transform: none !important;
+}
+
+/* Primary Button (Gradient) */
+.btn-primary {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: white;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #357abd, #285a8f);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Secondary Button (Outline or Soft) */
+.btn-secondary {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #e2e8f0;
+    color: #1e293b;
+    transform: translateY(-2px);
+}
+
+/* Danger/Stop Button (Red Gradient) */
+.btn-danger {
+    background: linear-gradient(135deg, #ff4d4d, #d93636);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+}
+
+.btn-danger:hover:not(:disabled) {
+    background: linear-gradient(135deg, #d93636, #b32d2d);
+    box-shadow: 0 6px 20px rgba(255, 77, 77, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Utility Classes */
+.btn-full {
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .btn {
+        width: 100%;
+        padding: 16px;
+    }
+}

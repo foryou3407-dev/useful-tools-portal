@@ -137,25 +137,11 @@
 }
 
 .btn-record {
-    background: #ff4444 !important;
-    color: white !important;
     min-width: 160px;
-}
-
-.btn-record:hover {
-    background: #e63939 !important;
-    transform: translateY(-2px);
 }
 
 .btn-stop {
-    background: #333 !important;
-    color: white !important;
     min-width: 160px;
-}
-
-.btn-stop:disabled {
-    background: #ccc !important;
-    cursor: not-allowed;
 }
 
 /* 체크박스 커스텀 */

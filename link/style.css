@@ -39,8 +39,6 @@
 
 #shorten-btn {
     padding: 0 30px;
-    font-size: 1.1rem;
-    white-space: nowrap;
 }
 
 /* 결과 카드 */
@@ -89,21 +87,6 @@
     color: var(--primary-color);
     text-decoration: underline;
     word-break: break-all;
-}
-
-.copy-btn {
-    padding: 8px 18px;
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap;
-}
-
-.copy-btn:hover {
-    background: #e2e8f0;
 }
 
 .copy-btn.success {
