@@ -72,27 +72,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLang = document.querySelector('input[name="lang"]:checked').value;
 
         progressSection.classList.remove('hidden');
+        progressBar.style.width = '0%';
+        progressPercent.textContent = '0%';
         resultText.value = '';
 
         try {
-            const worker = await Tesseract.createWorker({
-                logger: m => {
-                    updateStatus(m);
-                }
-            });
+            statusText.textContent = 'OCR 엔진 준비 중...';
 
-            await worker.loadLanguage(selectedLang);
-            await worker.initialize(selectedLang);
+            // Tesseract.js v5의 최적화된 워커 생성 방식
+            // 언어를 미리 전달하면 loadLanguage, initialize가 자동으로 수행됩니다.
+            const worker = await Tesseract.createWorker(selectedLang, 1, {
+                logger: m => updateStatus(m)
+            });
 
             const { data: { text } } = await worker.recognize(imageSrc);
 
             resultText.value = text;
+            statusText.textContent = '추출 완료!';
+            progressPercent.textContent = '100%';
+            progressBar.style.width = '100%';
+
             alert('텍스트 추출이 완료되었습니다!');
 
             await worker.terminate();
         } catch (error) {
             console.error('OCR Error:', error);
             statusText.textContent = '오류 발생: 다시 시도해 주세요.';
+            progressSection.classList.add('hidden');
         }
     }
 
@@ -103,9 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
             progressPercent.textContent = `${prog}%`;
             progressBar.style.width = `${prog}%`;
         } else if (m.status === 'loading tesseract core') {
-            statusText.textContent = '엔진 준비 중...';
-        } else if (m.status === 'initializing tesseract' || m.status === 'loading language traineddata') {
-            statusText.textContent = '언어 데이터 로딩 중...';
+            statusText.textContent = '코어 로딩 중...';
+        } else if (m.status === 'loading language traineddata' || m.status === 'loading language') {
+            statusText.textContent = '언어 데이터 불러오는 중...';
+        } else if (m.status === 'initializing tesseract' || m.status === 'initialized tesseract') {
+            statusText.textContent = '엔진 초기화 중...';
         }
     }
 
