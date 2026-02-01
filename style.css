@@ -29,10 +29,17 @@
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     overflow-x: auto;
-    padding: 10px 5px;
+    padding: 10px 20px;
     -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    .category-tabs {
+        justify-content: flex-start;
+        /* 모바일에서는 왼쪽부터 시작하여 잘림 방지 */
+    }
 }
 
 .category-tabs::-webkit-scrollbar {
@@ -139,18 +146,35 @@
 }
 
 @media (max-width: 600px) {
+    .tool-grid {
+        gap: 12px;
+        margin-top: 20px;
+    }
+
     .tool-card {
-        padding: 20px;
+        padding: 16px;
         flex-direction: row;
         align-items: center;
-        gap: 20px;
+        gap: 16px;
+        border-radius: 16px;
+    }
+
+    .tool-card:hover {
+        transform: none;
+        /* 모바일 터치 시 공중 부양 효과 제거 */
+        box-shadow: var(--shadow);
     }
 
     .tool-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
         margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .tool-card h2 {
+        font-size: 1.1rem;
     }
 
     .tool-card p {
@@ -161,5 +185,6 @@
     .badge {
         position: static;
         margin-left: auto;
+        padding: 3px 8px;
     }
 }
