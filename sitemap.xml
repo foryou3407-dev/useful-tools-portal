@@ -1,45 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://useful-tools-portal.vercel.app/</loc>
-        <lastmod>2026-01-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://useful-tools-portal.vercel.app/image-converter/</loc>
-        <lastmod>2026-01-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://useful-tools-portal.vercel.app/youtube-kit/</loc>
-        <lastmod>2026-01-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://useful-tools-portal.vercel.app/counter/</loc>
-        <lastmod>2026-01-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://useful-tools-portal.vercel.app/salary/</loc>
-        <lastmod>2026-01-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://useful-tools-portal.vercel.app/age/</loc>
-        <lastmod>2026-01-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://useful-tools-portal.vercel.app/currency/</loc>
-        <lastmod>2026-01-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+  <!-- 메인 페이지 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 이미지 변환 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/image-converter/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 유튜브 키트 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/youtube-kit/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 글자 수 세기 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/counter/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 연봉 계산기 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/salary/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 만나이 계산기 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/age/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 환율 계산기 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/currency/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 와이파이 QR -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/wifi/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 단위 변환기 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/converter/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 화면 녹화기 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/recorder/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 이미지 텍스트 추출 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/ocr/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- URL 단축기 -->
+  <url>
+    <loc>https://useful-tools-portal.vercel.app/link/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

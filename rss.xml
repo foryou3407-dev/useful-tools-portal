@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Tools Portal - 유용하고 강력한 온라인 도구 모음</title>
+    <link>https://useful-tools-portal.vercel.app</link>
+    <description>이미지 변환, 유튜브 키트, OCR, URL 단축기 등 별도의 설치 없이 브라우저에서 바로 사용할 수 있는 강력한 도구들을 제공합니다.</description>
+    <language>ko-kr</language>
+    <pubDate>Sun, 01 Feb 2026 16:09:00 +0900</pubDate>
+    <lastBuildDate>Sun, 01 Feb 2026 16:09:00 +0900</lastBuildDate>
+
+    <!-- 메인 페이지 -->
+    <item>
+      <title>Tools Portal 메인 - 모든 도구를 한눈에</title>
+      <link>https://useful-tools-portal.vercel.app/</link>
+      <description>유용하고 직관적인 온라인 도구들을 한곳에 모았습니다.</description>
+      <pubDate>Sun, 01 Feb 2026 16:09:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/</guid>
+    </item>
+
+    <!-- URL 단축기 -->
+    <item>
+      <title>URL 단축기 (Link Shortener)</title>
+      <link>https://useful-tools-portal.vercel.app/link/</link>
+      <description>긴 주소를 짧게 줄이고, 즉시 스캔 가능한 QR 코드까지 한 번에 만드세요.</description>
+      <pubDate>Sun, 01 Feb 2026 15:48:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/link/</guid>
+    </item>
+
+    <!-- 이미지 텍스트 추출 -->
+    <item>
+      <title>이미지 텍스트 변환 (OCR)</title>
+      <link>https://useful-tools-portal.vercel.app/ocr/</link>
+      <description>영수증, 명함 속의 글자를 AI가 읽어서 텍스트로 즉시 변환해 드립니다.</description>
+      <pubDate>Sun, 01 Feb 2026 15:43:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/ocr/</guid>
+    </item>
+
+    <!-- 화면 녹화기 -->
+    <item>
+      <title>무설치 화면 녹화기</title>
+      <link>https://useful-tools-portal.vercel.app/recorder/</link>
+      <description>프로그램 설치 없이 브라우저에서 바로 화면을 녹화하고 소장하세요.</description>
+      <pubDate>Sun, 01 Feb 2026 15:20:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/recorder/</guid>
+    </item>
+
+    <!-- 단위 변환기 -->
+    <item>
+      <title>만능 단위 변환기</title>
+      <link>https://useful-tools-portal.vercel.app/converter/</link>
+      <description>부동산 평수, 해외 직구 인치/파운드 변환을 1초 만에 해결하세요.</description>
+      <pubDate>Sun, 01 Feb 2026 15:15:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/converter/</guid>
+    </item>
+
+    <!-- 와이파이 QR -->
+    <item>
+      <title>와이파이 QR 생성기</title>
+      <link>https://useful-tools-portal.vercel.app/wifi/</link>
+      <description>우리 집 와이파이 연결 QR 코드를 예쁜 카드로 만들어서 인쇄하세요.</description>
+      <pubDate>Sun, 01 Feb 2026 15:00:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/wifi/</guid>
+    </item>
+
+    <!-- 환율 계산기 -->
+    <item>
+      <title>실시간 환율 계산기</title>
+      <link>https://useful-tools-portal.vercel.app/currency/</link>
+      <description>전 세계 주요 국가의 환율을 실시간으로 확인하고 계산해 보세요.</description>
+      <pubDate>Mon, 26 Jan 2026 10:00:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/currency/</guid>
+    </item>
+
+    <!-- 나이 계산기 -->
+    <item>
+      <title>만 나이 &amp; D-Day 계산기</title>
+      <link>https://useful-tools-portal.vercel.app/age/</link>
+      <description>정확한 만 나이와 주요 기념일, 띠 정보까지 한눈에 확인하세요.</description>
+      <pubDate>Sun, 25 Jan 2026 10:00:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/age/</guid>
+    </item>
+
+    <!-- 연봉 계산기 -->
+    <item>
+      <title>2025 연봉 실수령액 계산기</title>
+      <link>https://useful-tools-portal.vercel.app/salary/</link>
+      <description>세전 연봉/월급을 입력하고 실제 통장에 찍히는 월급을 시뮬레이션 하세요.</description>
+      <pubDate>Sat, 24 Jan 2026 10:00:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/salary/</guid>
+    </item>
+
+    <!-- 글자 수 세기 -->
+    <item>
+      <title>실시간 글자 수 세기</title>
+      <link>https://useful-tools-portal.vercel.app/counter/</link>
+      <description>자기소개서나 과제 제출 전, 글자 수와 바이트를 실시간으로 체크하세요.</description>
+      <pubDate>Fri, 23 Jan 2026 10:00:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/counter/</guid>
+    </item>
+
+    <!-- 유튜브 키트 -->
+    <item>
+      <title>유튜브 알고리즘 키트</title>
+      <link>https://useful-tools-portal.vercel.app/youtube-kit/</link>
+      <description>고화질 썸네일 다운로드와 제목 분석 정보를 제공합니다.</description>
+      <pubDate>Thu, 22 Jan 2026 10:00:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/youtube-kit/</guid>
+    </item>
+
+    <!-- 이미지 변환기 -->
+    <item>
+      <title>이미지 마스터 변환기</title>
+      <link>https://useful-tools-portal.vercel.app/image-converter/</link>
+      <description>HEIC, WebP, PNG 등 다양한 형식을 자유롭게 변환하고 압축하세요.</description>
+      <pubDate>Wed, 21 Jan 2026 10:00:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/image-converter/</guid>
+    </item>
+
+  </channel>
+</rss>
