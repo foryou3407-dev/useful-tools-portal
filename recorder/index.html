@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무설치 화면 녹화기 - Tools Portal</title>
+    <link rel="stylesheet" href="../globals.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared-components.js" defer></script>
+</head>
+
+<body>
+    <global-header></global-header>
+
+    <main class="container">
+        <section class="tool-header">
+            <h1>무설치 화면 녹화기</h1>
+            <p class="subtitle">별도의 프로그램 없이 브라우저에서 즉시 화면을 녹화하고 고화질로 저장하세요.</p>
+        </section>
+
+        <div class="recorder-container">
+            <!-- 비디오 미리보기 영역 -->
+            <div class="video-preview-wrapper" id="preview-wrapper">
+                <video id="preview" autoplay muted playsinline></video>
+                <div class="video-overlay" id="video-overlay">
+                    <div class="overlay-content">
+                        <span class="pulse-ring"></span>
+                        <p>녹화 시작을 눌러주세요</p>
+                    </div>
+                </div>
+                <div class="recording-status" id="recording-status">
+                    <span class="status-dot"></span>
+                    <span id="status-text">REC 00:00:00</span>
+                </div>
+            </div>
+
+            <!-- 컨트롤 바 -->
+            <div class="controls-card">
+                <div class="options-bar">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="mic-toggle">
+                        <span class="checkmark"></span>
+                        마이크 오디오 포함
+                    </label>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="start-btn" class="btn btn-record">
+                        <span class="icon">🔴</span> 녹화 시작
+                    </button>
+                    <button id="stop-btn" class="btn btn-stop" disabled>
+                        <span class="icon">⬛</span> 녹화 중지
+                    </button>
+                    <button id="download-btn" class="btn btn-primary" disabled>
+                        <span class="icon">💾</span> 영상 저장
+                    </button>
+                </div>
+            </div>
+
+            <!-- 도움말 -->
+            <div class="recorder-info card">
+                <h3>💡 사용 방법</h3>
+                <ul>
+                    <li><b>녹화 시작:</b> 버튼을 누른 후 녹화할 화면(전체 화면, 창, 탭)을 선택하세요.</li>
+                    <li><b>마이크:</b> 목소리까지 녹음하려면 '마이크 오디오 포함'을 체크하세요.</li>
+                    <li><b>저장:</b> 녹화 중지 후 나타나는 '영상 저장' 버튼을 누르면 .webm 파일로 저장됩니다.</li>
+                </ul>
+                <p class="notice">※ 모든 녹화는 사용자의 컴퓨터에서 로컬로 진행되며 서버에 전송되지 않습니다.</p>
+            </div>
+        </div>
+    </main>
+
+    <global-footer></global-footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

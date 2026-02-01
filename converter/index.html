@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>만능 단위 변환기 - Tools Portal</title>
+    <link rel="stylesheet" href="../globals.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared-components.js" defer></script>
+</head>
+
+<body>
+    <global-header></global-header>
+
+    <main class="container">
+        <section class="tool-header">
+            <h1>만능 단위 변환기</h1>
+            <p class="subtitle">넓이, 길이, 무게, 온도를 실시간으로 쉽고 빠르게 변환하세요.</p>
+        </section>
+
+        <div class="converter-container card">
+            <!-- 탭 메뉴 -->
+            <div class="tabs">
+                <button class="tab-btn active" data-category="area">🏠 넓이 (부동산)</button>
+                <button class="tab-btn" data-category="length">📏 길이 (직구)</button>
+                <button class="tab-btn" data-category="weight">⚖️ 무게 (요리)</button>
+                <button class="tab-btn" data-category="temp">🌡️ 온도</button>
+            </div>
+
+            <!-- 변환 영역 -->
+            <div class="converter-body">
+                <div class="input-panel">
+                    <label for="input-value">변환 전</label>
+                    <div class="input-group">
+                        <input type="number" id="input-value" value="1" placeholder="값을 입력하세요">
+                        <select id="input-unit"></select>
+                    </div>
+                </div>
+
+                <div class="swap-action">
+                    <button id="swap-btn" title="단위 교체">↔</button>
+                </div>
+
+                <div class="output-panel">
+                    <label for="output-value">변환 후</label>
+                    <div class="input-group">
+                        <input type="text" id="output-value" readonly>
+                        <select id="output-unit"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-info">
+                <p id="formula-text"></p>
+            </div>
+        </div>
+
+        <div class="usage-tip-section">
+            <div class="tip-card">
+                <h3>💡 아시나요?</h3>
+                <div id="tip-content">
+                    <!-- JS에서 동적으로 채워짐 -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <global-footer></global-footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

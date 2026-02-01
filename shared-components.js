@@ -10,6 +10,9 @@ class GlobalHeader extends HTMLElement {
             path.includes('/counter/') ||
             path.includes('/salary/') ||
             path.includes('/age/') ||
+            path.includes('/wifi/') ||
+            path.includes('/converter/') ||
+            path.includes('/recorder/') ||
             path.includes('/currency/');
 
         const base = isSubPage ? '../' : './';
@@ -72,6 +75,27 @@ class GlobalHeader extends HTMLElement {
                                                 <span class="menu-desc">주요 국가 실시간 환율 계산</span>
                                             </div>
                                         </a>
+                                        <a href="${base}recorder/index.html" class="menu-item ${path.includes('recorder') ? 'active' : ''}">
+                                            <span class="menu-icon">📹</span>
+                                            <div class="menu-text">
+                                                <span class="menu-title">화면 녹화기 <span class="badge-new">NEW</span></span>
+                                                <span class="menu-desc">무설치 브라우저 녹화 저장</span>
+                                            </div>
+                                        </a>
+                                        <a href="${base}converter/index.html" class="menu-item ${path.includes('converter') ? 'active' : ''}">
+                                            <span class="menu-icon">🔄</span>
+                                            <div class="menu-text">
+                                                <span class="menu-title">단위 변환기</span>
+                                                <span class="menu-desc">평(坪), 인치, 화씨 등 변환</span>
+                                            </div>
+                                        </a>
+                                        <a href="${base}wifi/index.html" class="menu-item ${path.includes('wifi') ? 'active' : ''}">
+                                            <span class="menu-icon">📶</span>
+                                            <div class="menu-text">
+                                                <span class="menu-title">와이파이 QR</span>
+                                                <span class="menu-desc">자동 연결 QR 카드 생성</span>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -118,6 +142,9 @@ class GlobalFooter extends HTMLElement {
             path.includes('/counter/') ||
             path.includes('/salary/') ||
             path.includes('/age/') ||
+            path.includes('/wifi/') ||
+            path.includes('/converter/') ||
+            path.includes('/recorder/') ||
             path.includes('/currency/');
 
         const base = isSubPage ? '../' : './';
