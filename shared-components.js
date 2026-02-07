@@ -15,6 +15,7 @@ class GlobalHeader extends HTMLElement {
             path.includes('/recorder/') ||
             path.includes('/ocr/') ||
             path.includes('/link/') ||
+            path.includes('/address/') ||
             path.includes('/currency/');
 
         const base = isSubPage ? '../' : './';
@@ -80,21 +81,21 @@ class GlobalHeader extends HTMLElement {
                                         <a href="${base}recorder/index.html" class="menu-item ${path.includes('recorder') ? 'active' : ''}">
                                             <span class="menu-icon">📹</span>
                                             <div class="menu-text">
-                                                <span class="menu-title">화면 녹화기 <span class="badge-new">NEW</span></span>
+                                                <span class="menu-title">화면 녹화기</span>
                                                 <span class="menu-desc">무설치 브라우저 녹화 저장</span>
                                             </div>
                                         </a>
                                         <a href="${base}ocr/index.html" class="menu-item ${path.includes('ocr') ? 'active' : ''}">
                                             <span class="menu-icon">👁️</span>
                                             <div class="menu-text">
-                                                <span class="menu-title">이미지 텍스트 변환 <span class="badge-new">NEW</span></span>
+                                                <span class="menu-title">이미지 텍스트 변환</span>
                                                 <span class="menu-desc">이미지 속 글자 자동 추출 (OCR)</span>
                                             </div>
                                         </a>
                                         <a href="${base}link/index.html" class="menu-item ${path.includes('link') ? 'active' : ''}">
                                             <span class="menu-icon">🔗</span>
                                             <div class="menu-text">
-                                                <span class="menu-title">URL 단축기 <span class="badge-new">NEW</span></span>
+                                                <span class="menu-title">URL 단축기</span>
                                                 <span class="menu-desc">긴 주소를 짧고 예쁘게 단축</span>
                                             </div>
                                         </a>
@@ -103,6 +104,13 @@ class GlobalHeader extends HTMLElement {
                                             <div class="menu-text">
                                                 <span class="menu-title">단위 변환기</span>
                                                 <span class="menu-desc">평(坪), 인치, 화씨 등 변환</span>
+                                            </div>
+                                        </a>
+                                        <a href="${base}address/index.html" class="menu-item ${path.includes('address') ? 'active' : ''}">
+                                            <span class="menu-icon">📮</span>
+                                            <div class="menu-text">
+                                                <span class="menu-title">주소 변환기</span>
+                                                <span class="menu-desc">우편번호 및 영문 주소 변환</span>
                                             </div>
                                         </a>
                                         <a href="${base}wifi/index.html" class="menu-item ${path.includes('wifi') ? 'active' : ''}">
@@ -158,6 +166,7 @@ class GlobalFooter extends HTMLElement {
             path.includes('/recorder/') ||
             path.includes('/ocr/') ||
             path.includes('/link/') ||
+            path.includes('/address/') ||
             path.includes('/currency/');
 
         const base = isSubPage ? '../' : './';

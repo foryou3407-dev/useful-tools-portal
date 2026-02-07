@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="해외 직구에 꼭 필요한 영문 주소 변환과 우편번호 검색을 한 번에 해결하세요.">
+    <title>우편번호 및 영문 주소 변환기 - Tools Portal</title>
+    <link rel="stylesheet" href="../globals.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap">
+</head>
+
+<body>
+    <global-header></global-header>
+
+    <main class="main-container">
+        <div class="tool-header">
+            <h1 class="page-title">📮 우편번호 및 영문 주소 변환기</h1>
+            <p class="page-desc">해외 직구 시 필요한 영문 주소를 클릭 한 번으로 간편하게 확인하고 복사하세요.</p>
+        </div>
+
+        <section class="search-section">
+            <button id="search-btn" class="btn btn-primary btn-search">🔍 주소 검색하기</button>
+        </section>
+
+        <section id="result-section" class="result-section hidden">
+            <div class="result-card card">
+                <div class="input-group">
+                    <label for="postcode">우편번호 (Zonecode)</label>
+                    <div class="input-wrap">
+                        <input type="text" id="postcode" readonly placeholder="00000">
+                        <button class="btn-copy" data-target="postcode">복사</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="roadAddress">도로명 주소 (한글)</label>
+                    <div class="input-wrap">
+                        <input type="text" id="roadAddress" readonly placeholder="한글 도로명 주소가 표시됩니다.">
+                        <button class="btn-copy" data-target="roadAddress">복사</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="englishAddress">영문 주소 (English Address)</label>
+                    <div class="input-wrap">
+                        <input type="text" id="englishAddress" readonly
+                            placeholder="English address will be displayed here.">
+                        <button class="btn-copy" data-target="englishAddress">복사</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="toast" class="toast hidden">복사되었습니다!</div>
+    </main>
+
+    <global-footer></global-footer>
+
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="../shared-components.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -5,16 +5,25 @@
     <link>https://useful-tools-portal.vercel.app</link>
     <description>이미지 변환, 유튜브 키트, OCR, URL 단축기 등 별도의 설치 없이 브라우저에서 바로 사용할 수 있는 강력한 도구들을 제공합니다.</description>
     <language>ko-kr</language>
-    <pubDate>Sun, 01 Feb 2026 16:09:00 +0900</pubDate>
-    <lastBuildDate>Sun, 01 Feb 2026 16:09:00 +0900</lastBuildDate>
+    <pubDate>Sat, 07 Feb 2026 13:10:00 +0900</pubDate>
+    <lastBuildDate>Sat, 07 Feb 2026 13:10:00 +0900</lastBuildDate>
 
     <!-- 메인 페이지 -->
     <item>
       <title>Tools Portal 메인 - 모든 도구를 한눈에</title>
       <link>https://useful-tools-portal.vercel.app/</link>
       <description>유용하고 직관적인 온라인 도구들을 한곳에 모았습니다.</description>
-      <pubDate>Sun, 01 Feb 2026 16:09:00 +0900</pubDate>
+      <pubDate>Sat, 07 Feb 2026 13:10:00 +0900</pubDate>
       <guid>https://useful-tools-portal.vercel.app/</guid>
+    </item>
+
+    <!-- 우편번호 및 영문 주소 변환기 -->
+    <item>
+      <title>우편번호 및 영문 주소 변환기</title>
+      <link>https://useful-tools-portal.vercel.app/address/</link>
+      <description>해외 직구에 꼭 필요한 우편번호 검색과 영문 주소 변환을 한 번에 해결하세요.</description>
+      <pubDate>Sat, 07 Feb 2026 13:10:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/address/</guid>
     </item>
 
     <!-- URL 단축기 -->
