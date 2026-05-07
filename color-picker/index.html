@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="이미지에서 원하는 색상을 추출하거나 AI가 추천하는 테마 팔레트를 확인하세요. 클릭 한 번으로 HEX, RGB 코드를 복사할 수 있습니다.">
+    <meta name="keywords" content="색상 추출기, 컬러 피커, 이미지 색상, 팔레트 추출, HEX 코드, RGB 변환">
+    <meta name="author" content="Tools Portal">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://useful-tools-portal.vercel.app/color-picker/index.html">
+    <meta property="og:title" content="이미지 색상 추출기 - 유틸리티 포털">
+    <meta property="og:description" content="이미지 속 원하는 색상을 클릭하여 HEX 코드를 추출하고 테마 컬러 팔레트를 확인하세요.">
+    <meta property="og:image" content="https://useful-tools-portal.vercel.app/og-image.png">
+
+    <link rel="icon" href="https://fav.farm/🛠️">
+
+    <link rel="stylesheet" href="../globals.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script src="../shared-components.js"></script>
+</head>
+
+<body>
+    <global-header></global-header>
+
+    <div class="container" style="margin-top: 40px;">
+        <header>
+            <h1>이미지 색상 추출기</h1>
+            <p>이미지를 클릭해 정교한 색상 코드를 얻고, AI가 분석한 테마 팔레트를 확인해 보세요.</p>
+        </header>
+
+        <main>
+            <section class="upload-section" id="drop-zone">
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <div class="upload-content">
+                    <div class="icon">🎨</div>
+                    <p>이미지를 클릭하거나 여기에 드래그하세요</p>
+                    <span>JPG, PNG, WebP 지원</span>
+                </div>
+            </section>
+
+            <div id="editor-container" class="hidden">
+                <div class="color-picker-layout">
+                    <!-- 좌측: 이미지 캔버스 -->
+                    <div class="canvas-area">
+                        <div class="canvas-wrapper">
+                            <canvas id="color-canvas"></canvas>
+                            <div class="canvas-hint">이미지 위를 클릭하여 색상을 추출하세요</div>
+                        </div>
+                    </div>
+
+                    <!-- 우측: 결과 패널 -->
+                    <div class="result-panel">
+                        <!-- 스포이트 결과 -->
+                        <div class="result-card eyedropper-result">
+                            <h3>선택한 색상 (Eyedropper)</h3>
+                            <div class="current-color-info">
+                                <div id="color-preview" class="color-preview-box"></div>
+                                <div class="code-groups">
+                                    <div class="code-item" id="copy-hex">
+                                        <span class="label">HEX</span>
+                                        <span class="value" id="hex-value">#FFFFFF</span>
+                                        <span class="copy-icon">📋</span>
+                                    </div>
+                                    <div class="code-item" id="copy-rgb">
+                                        <span class="label">RGB</span>
+                                        <span class="value" id="rgb-value">255, 255, 255</span>
+                                        <span class="copy-icon">📋</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 테마 팔레트 -->
+                        <div class="result-card theme-palette">
+                            <h3>AI 테마 팔레트 (Dominant Colors)</h3>
+                            <div id="palette-container" class="palette-swatches">
+                                <!-- Swatches will be injected here -->
+                                <div class="palette-loading">이미지 분석 중...</div>
+                            </div>
+                            <p class="help-text">색상을 클릭하면 HEX 코드가 복사됩니다.</p>
+                        </div>
+
+                        <div class="actions">
+                            <button id="reset-btn" class="secondary-btn btn-full">이미지 교체하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <global-footer></global-footer>
+
+    <div id="toast" class="toast">복사되었습니다!</div>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

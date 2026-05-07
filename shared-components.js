@@ -5,20 +5,21 @@
 class GlobalHeader extends HTMLElement {
     connectedCallback() {
         const path = window.location.pathname;
-        const isSubPage = path.includes('/image-converter/') ||
-            path.includes('/youtube-kit/') ||
-            path.includes('/counter/') ||
-            path.includes('/salary/') ||
-            path.includes('/age/') ||
-            path.includes('/wifi/') ||
-            path.includes('/converter/') ||
-            path.includes('/recorder/') ||
-            path.includes('/ocr/') ||
-            path.includes('/link/') ||
-            path.includes('/address/') ||
-            path.includes('/pdf-to-image/') ||
-            path.includes('/pdf-editor/') ||
-            path.includes('/currency/');
+        const isSubPage = path.includes('image-converter') ||
+            path.includes('youtube-kit') ||
+            path.includes('counter') ||
+            path.includes('salary') ||
+            path.includes('age') ||
+            path.includes('wifi') ||
+            path.includes('converter') ||
+            path.includes('recorder') ||
+            path.includes('ocr') ||
+            path.includes('link') ||
+            path.includes('address') ||
+            path.includes('pdf-to-image') ||
+            path.includes('pdf-editor') ||
+            path.includes('color-picker') ||
+            path.includes('currency');
 
         const base = isSubPage ? '../' : './';
 
@@ -136,6 +137,13 @@ class GlobalHeader extends HTMLElement {
                                                 <span class="menu-desc">PDF 합치기 및 페이지 나누기</span>
                                             </div>
                                         </a>
+                                        <a href="${base}color-picker/index.html" class="menu-item ${path.includes('color-picker') ? 'active' : ''}">
+                                            <span class="menu-icon">🎨</span>
+                                            <div class="menu-text">
+                                                <span class="menu-title">이미지 색상 추출기</span>
+                                                <span class="menu-desc">이미지 색상 코드 및 팔레트 추출</span>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -172,20 +180,21 @@ class GlobalHeader extends HTMLElement {
 class GlobalFooter extends HTMLElement {
     connectedCallback() {
         const path = window.location.pathname;
-        const isSubPage = path.includes('/image-converter/') ||
-            path.includes('/youtube-kit/') ||
-            path.includes('/counter/') ||
-            path.includes('/salary/') ||
-            path.includes('/age/') ||
-            path.includes('/wifi/') ||
-            path.includes('/converter/') ||
-            path.includes('/recorder/') ||
-            path.includes('/ocr/') ||
-            path.includes('/link/') ||
-            path.includes('/address/') ||
-            path.includes('/pdf-to-image/') ||
-            path.includes('/pdf-editor/') ||
-            path.includes('/currency/');
+        const isSubPage = path.includes('image-converter') ||
+            path.includes('youtube-kit') ||
+            path.includes('counter') ||
+            path.includes('salary') ||
+            path.includes('age') ||
+            path.includes('wifi') ||
+            path.includes('converter') ||
+            path.includes('recorder') ||
+            path.includes('ocr') ||
+            path.includes('link') ||
+            path.includes('address') ||
+            path.includes('pdf-to-image') ||
+            path.includes('pdf-editor') ||
+            path.includes('color-picker') ||
+            path.includes('currency');
 
         const base = isSubPage ? '../' : './';
 
