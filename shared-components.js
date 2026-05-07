@@ -17,6 +17,7 @@ class GlobalHeader extends HTMLElement {
             path.includes('/link/') ||
             path.includes('/address/') ||
             path.includes('/pdf-to-image/') ||
+            path.includes('/pdf-editor/') ||
             path.includes('/currency/');
 
         const base = isSubPage ? '../' : './';
@@ -128,6 +129,13 @@ class GlobalHeader extends HTMLElement {
                                                 <span class="menu-desc">PDF 페이지를 이미지로 변환</span>
                                             </div>
                                         </a>
+                                        <a href="${base}pdf-editor/index.html" class="menu-item ${path.includes('pdf-editor') ? 'active' : ''}">
+                                            <span class="menu-icon">📄</span>
+                                            <div class="menu-text">
+                                                <span class="menu-title">PDF 편집기</span>
+                                                <span class="menu-desc">PDF 합치기 및 페이지 나누기</span>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -176,6 +184,7 @@ class GlobalFooter extends HTMLElement {
             path.includes('/link/') ||
             path.includes('/address/') ||
             path.includes('/pdf-to-image/') ||
+            path.includes('/pdf-editor/') ||
             path.includes('/currency/');
 
         const base = isSubPage ? '../' : './';
