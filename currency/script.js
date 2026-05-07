@@ -45,13 +45,17 @@ async function convert() {
     }
 
     try {
-        const response = await fetch(`https://api.frankfurter.app/latest?from=${from}&to=${to}`);
+        const response = await fetch(`https://open.er-api.com/v6/latest/${from}`);
         const data = await response.json();
+
+        if (data.result === 'error') {
+            throw new Error(data['error-type']);
+        }
 
         const rate = data.rates[to];
         const result = amount * rate;
 
-        // 결과 드롭
+        // 결과 업데이트
         toAmount.value = result.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
@@ -59,11 +63,14 @@ async function convert() {
 
         // 정보 업데이트
         rateText.innerText = `1 ${from} = ${rate.toFixed(4)} ${to}`;
-        baseDate.innerText = `기준일: ${data.date}`;
+        
+        // 날짜 포맷팅 (UTC -> Local)
+        const updateDate = new Date(data.time_last_update_utc);
+        baseDate.innerText = `기준일: ${updateDate.toLocaleDateString()} ${updateDate.toLocaleTimeString()}`;
 
     } catch (error) {
         console.error('환율 정보를 불러오는 데 실패했습니다:', error);
-        rateText.innerText = '환율 정보를 불러오지 못했습니다.';
+        rateText.innerText = '환율 정보를 불러오지 못했습니다. (API 제한)';
     }
 }
 

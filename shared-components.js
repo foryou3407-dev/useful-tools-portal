@@ -64,7 +64,7 @@ class GlobalHeader extends HTMLElement {
                                             <span class="menu-icon">💰</span>
                                             <div class="menu-text">
                                                 <span class="menu-title">연봉 계산기</span>
-                                                <span class="menu-desc">2025 최신 실수령액 산출</span>
+                                                <span class="menu-desc">2026 최신 실수령액 산출</span>
                                             </div>
                                         </a>
                                         <a href="${base}age/index.html" class="menu-item ${path.includes('age') ? 'active' : ''}">
