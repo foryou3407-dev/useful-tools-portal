@@ -18,6 +18,7 @@ const progressBar = document.getElementById('progress-bar');
 const progressText = document.getElementById('progress-text');
 const progressContainer = document.getElementById('progress-container');
 const previewCanvas = document.getElementById('preview-canvas');
+const formatSelect = document.getElementById('image-format');
 
 let currentPdf = null;
 let currentFileName = '';
@@ -105,6 +106,10 @@ async function renderPreview(pageNumber) {
     previewCanvas.height = viewport.height;
     previewCanvas.width = viewport.width;
     
+    // Fill background with white (especially for JPG)
+    context.fillStyle = '#ffffff';
+    context.fillRect(0, 0, previewCanvas.width, previewCanvas.height);
+
     const renderContext = {
         canvasContext: context,
         viewport: viewport
@@ -122,6 +127,9 @@ async function convertAndDownload() {
     progressContainer.classList.remove('hidden');
     
     const scale = 2.0; // High resolution
+    const format = formatSelect.value; // 'png' or 'jpeg'
+    const mimeType = `image/${format}`;
+    const extension = format === 'jpeg' ? 'jpg' : 'png';
     
     for (let i = 1; i <= numPages; i++) {
         const page = await currentPdf.getPage(i);
@@ -131,6 +139,10 @@ async function convertAndDownload() {
         const context = canvas.getContext('2d');
         canvas.height = viewport.height;
         canvas.width = viewport.width;
+
+        // Fill background with white
+        context.fillStyle = '#ffffff';
+        context.fillRect(0, 0, canvas.width, canvas.height);
         
         await page.render({
             canvasContext: context,
@@ -138,10 +150,10 @@ async function convertAndDownload() {
         }).promise;
         
         // Convert canvas to blob
-        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, mimeType, 0.95));
         
         // Add to ZIP
-        const pageName = `page_${String(i).padStart(3, '0')}.png`;
+        const pageName = `page_${String(i).padStart(3, '0')}.${extension}`;
         zip.file(pageName, blob);
         
         // Update Progress
