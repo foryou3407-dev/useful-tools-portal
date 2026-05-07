@@ -16,6 +16,7 @@ class GlobalHeader extends HTMLElement {
             path.includes('/ocr/') ||
             path.includes('/link/') ||
             path.includes('/address/') ||
+            path.includes('/pdf-to-image/') ||
             path.includes('/currency/');
 
         const base = isSubPage ? '../' : './';
@@ -120,6 +121,13 @@ class GlobalHeader extends HTMLElement {
                                                 <span class="menu-desc">자동 연결 QR 카드 생성</span>
                                             </div>
                                         </a>
+                                        <a href="${base}pdf-to-image/index.html" class="menu-item ${path.includes('pdf-to-image') ? 'active' : ''}">
+                                            <span class="menu-icon">🖼️</span>
+                                            <div class="menu-text">
+                                                <span class="menu-title">PDF 이미지 변환</span>
+                                                <span class="menu-desc">PDF 페이지를 이미지로 변환</span>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -167,6 +175,7 @@ class GlobalFooter extends HTMLElement {
             path.includes('/ocr/') ||
             path.includes('/link/') ||
             path.includes('/address/') ||
+            path.includes('/pdf-to-image/') ||
             path.includes('/currency/');
 
         const base = isSubPage ? '../' : './';
