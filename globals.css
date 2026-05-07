@@ -350,3 +350,60 @@ h1.page-title {
         padding: 16px;
     }
 }
+
+/* SEO Content Section */
+.seo-content {
+    max-width: 1000px;
+    margin: 40px auto 60px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 16px;
+    border: 1px solid #e9ecef;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.seo-content h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.seo-content h2::before {
+    content: '📘';
+    font-size: 1.1rem;
+}
+
+.seo-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.seo-content p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.seo-content ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.seo-content li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .seo-content {
+        margin: 30px 20px;
+        padding: 20px;
+    }
+}

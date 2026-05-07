@@ -1,17 +1,17 @@
 /**
- * 연봉 계산기 설정값 (2025~2026 예상 세법 기준)
+ * 연봉 계산기 설정값 (2026년 최신 세법 기준)
  * 향후 세율 변동 시 이 객체의 값만 수정하면 모든 로직에 반영됩니다.
  */
 const CONFIG = {
     RATES: {
-        pension: 0.045,            // 국민연금 요율 (4.5%)
-        health: 0.03545,           // 건강보험 요율 (3.545%)
-        careRatio: 0.1295,         // 장기요양 (건보료의 12.95%)
+        pension: 0.0475,            // 국민연금 요율 (4.75%)
+        health: 0.03595,           // 건강보험 요율 (3.595%)
+        careRatio: 0.1314,         // 장기요양 (건보료의 13.14%)
         employment: 0.009          // 고용보험 요율 (0.9%)
     },
     LIMITS: {
-        pensionMaxIncome: 6170000, // 국민연금 기준월소득액 상한액
-        pensionMaxAmount: 277650   // 국민연금 월 최대 공제액 (617만 * 4.5%)
+        pensionMaxIncome: 6370000, // 국민연금 기준월소득액 상한액 (2026.05 기준)
+        pensionMaxAmount: 302575   // 국민연금 월 최대 공제액 (637만 * 4.75%)
     },
     DEDUCTIONS: {
         humanBase: 1500000         // 기본 인적공제 (본인 1인)
@@ -107,8 +107,12 @@ function calculateSalary() {
         calculatedTaxYearly = taxBase * 0.35 - 15440000;
     } else if (taxBase <= 300000000) {
         calculatedTaxYearly = taxBase * 0.38 - 19940000;
-    } else {
+    } else if (taxBase <= 500000000) {
         calculatedTaxYearly = taxBase * 0.40 - 25940000;
+    } else if (taxBase <= 1000000000) {
+        calculatedTaxYearly = taxBase * 0.42 - 35940000;
+    } else {
+        calculatedTaxYearly = taxBase * 0.45 - 65940000;
     }
 
     // Step 4: 근로소득세액공제
