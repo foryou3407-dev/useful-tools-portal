@@ -5,16 +5,43 @@
     <link>https://useful-tools-portal.vercel.app</link>
     <description>이미지 변환, 유튜브 키트, OCR, URL 단축기 등 별도의 설치 없이 브라우저에서 바로 사용할 수 있는 강력한 도구들을 제공합니다.</description>
     <language>ko-kr</language>
-    <pubDate>Sat, 07 Feb 2026 13:10:00 +0900</pubDate>
-    <lastBuildDate>Sat, 07 Feb 2026 13:10:00 +0900</lastBuildDate>
+    <pubDate>Thu, 07 May 2026 14:50:00 +0900</pubDate>
+    <lastBuildDate>Thu, 07 May 2026 14:50:00 +0900</lastBuildDate>
 
     <!-- 메인 페이지 -->
     <item>
       <title>Tools Portal 메인 - 모든 도구를 한눈에</title>
       <link>https://useful-tools-portal.vercel.app/</link>
       <description>유용하고 직관적인 온라인 도구들을 한곳에 모았습니다.</description>
-      <pubDate>Sat, 07 Feb 2026 13:10:00 +0900</pubDate>
+      <pubDate>Thu, 07 May 2026 14:50:00 +0900</pubDate>
       <guid>https://useful-tools-portal.vercel.app/</guid>
+    </item>
+
+    <!-- 이미지 색상 추출기 -->
+    <item>
+      <title>이미지 색상 추출기 (Color Picker)</title>
+      <link>https://useful-tools-portal.vercel.app/color-picker/</link>
+      <description>이미지에서 원하는 색상을 추출하고 AI 테마 컬러 팔레트를 생성하세요.</description>
+      <pubDate>Thu, 07 May 2026 14:30:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/color-picker/</guid>
+    </item>
+
+    <!-- PDF 편집기 -->
+    <item>
+      <title>PDF 편집기 (Merge &amp; Split)</title>
+      <link>https://useful-tools-portal.vercel.app/pdf-editor/</link>
+      <description>여러 PDF를 하나로 합치거나 원하는 페이지만 나누어 안전하게 추출하세요.</description>
+      <pubDate>Thu, 07 May 2026 14:00:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/pdf-editor/</guid>
+    </item>
+
+    <!-- PDF 이미지 변환 -->
+    <item>
+      <title>PDF 이미지 변환기</title>
+      <link>https://useful-tools-portal.vercel.app/pdf-to-image/</link>
+      <description>PDF의 모든 페이지를 고화질 이미지로 변환하고 ZIP으로 한 번에 내려받으세요.</description>
+      <pubDate>Thu, 07 May 2026 13:30:00 +0900</pubDate>
+      <guid>https://useful-tools-portal.vercel.app/pdf-to-image/</guid>
     </item>
 
     <!-- 우편번호 및 영문 주소 변환기 -->
