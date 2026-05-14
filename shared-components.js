@@ -219,6 +219,9 @@ class GlobalFooter extends HTMLElement {
             </div>
         `;
 
+        // PWA 관련 전역 변수 설정
+        window.PWA_BASE = base;
+
         // PWA 핸들러 동적 주입 (페이지에 없을 경우)
         if (!document.getElementById('pwa-script')) {
             const script = document.createElement('script');

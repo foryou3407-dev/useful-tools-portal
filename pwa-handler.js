@@ -7,10 +7,8 @@ let deferredPrompt;
 // 1. 서비스 워커 등록
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        const swPath = window.location.pathname.includes('/') && window.location.pathname.split('/').length > 2 ? '../service-worker.js' : './service-worker.js';
-        // 서브 폴더 깊이에 따라 경로 조정 필요할 수 있으나 root('/') 기준으로 등록하는 것이 일반적
-        // 여기서는 root 기준인 '/service-worker.js'를 사용
-        navigator.serviceWorker.register('/service-worker.js')
+        const base = window.PWA_BASE || './';
+        navigator.serviceWorker.register(`${base}service-worker.js`)
             .then(reg => console.log('SW Registered'))
             .catch(err => console.log('SW Register Error:', err));
     });
@@ -22,29 +20,39 @@ const isIOS = () => {
 };
 
 // 3. 설치 버튼 및 안내 로직
-window.addEventListener('DOMContentLoaded', () => {
+const initPWA = () => {
     const installBtn = document.getElementById('install-btn');
     const iosNotice = document.getElementById('ios-install-notice');
+    const isDebug = new URLSearchParams(window.location.search).get('debug') === 'pwa';
 
-    if (!installBtn) return;
+    if (!installBtn) {
+        setTimeout(initPWA, 100);
+        return;
+    }
 
-    // iOS인 경우
-    if (isIOS()) {
-        installBtn.classList.remove('hidden'); // 버튼은 보여주되 안내 툴팁용으로 사용 가능
+    // 디버그 모드이거나 iOS인 경우 버튼 즉시 노출
+    if (isDebug || isIOS()) {
+        installBtn.classList.remove('hidden');
+        if (isIOS()) {
+            installBtn.innerHTML = '<span>📲 앱 설치 안내</span>';
+        }
         installBtn.addEventListener('click', () => {
-            if (iosNotice) {
-                iosNotice.classList.toggle('active');
+            if (isIOS()) {
+                if (iosNotice) iosNotice.classList.toggle('active');
+                else alert("아이폰 사용자는 브라우저 하단의 [공유] 버튼을 누른 후 '홈 화면에 추가'를 선택해 주세요! 📲");
             } else {
-                alert("아이폰 사용자는 브라우저 하단의 [공유] 버튼을 누른 후 '홈 화면에 추가'를 선택해 주세요! 📲");
+                alert("이것은 디버그 모드용 미리보기입니다. 실제 설치는 브라우저의 조건이 충족되어야 작동합니다.");
             }
         });
+        if (isIOS()) return;
     }
 
     // 안드로이드/PC 설치 이벤트 감지
     window.addEventListener('beforeinstallprompt', (e) => {
+        console.log('beforeinstallprompt event fired');
         e.preventDefault();
         deferredPrompt = e;
-        installBtn.classList.remove('hidden'); // 설치 가능할 때 버튼 노출
+        installBtn.classList.remove('hidden');
     });
 
     installBtn.addEventListener('click', async () => {
@@ -56,7 +64,14 @@ window.addEventListener('DOMContentLoaded', () => {
         deferredPrompt = null;
         installBtn.classList.add('hidden');
     });
-});
+};
+
+// DOM 상태에 따라 즉시 실행 또는 이벤트 대기
+if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', initPWA);
+} else {
+    initPWA();
+}
 
 // 설치 완료 시 버튼 숨기기
 window.addEventListener('appinstalled', () => {
