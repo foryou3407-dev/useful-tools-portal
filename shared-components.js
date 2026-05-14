@@ -226,7 +226,7 @@ class GlobalFooter extends HTMLElement {
         if (!document.getElementById('pwa-script')) {
             const script = document.createElement('script');
             script.id = 'pwa-script';
-            script.src = `${base}pwa-handler.js`;
+            script.src = `${base}pwa-handler.js?v=2`;
             document.body.appendChild(script);
         }
 

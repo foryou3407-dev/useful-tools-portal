@@ -14,9 +14,11 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// 2. iOS 여부 확인
+// 2. iOS 여부 확인 (최신 iPad 및 Safari 데스크톱 모드 대응)
 const isIOS = () => {
-    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    return /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream || 
+           (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPad Pro 등 데스크톱 모드 대응
 };
 
 // 3. 설치 버튼 및 안내 로직

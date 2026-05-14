@@ -1,4 +1,4 @@
-const CACHE_NAME = 'useful-tools-v1';
+const CACHE_NAME = 'useful-tools-v2';
 const ASSETS = [
     '/',
     '/index.html',
