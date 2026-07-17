@@ -207,7 +207,36 @@ class GlobalFooter extends HTMLElement {
                     </div>
                 </div>
             </footer>
+
+            <!-- PWA 설치 버튼 (플로팅) -->
+            <div class="install-fab">
+                <div id="ios-install-notice" class="ios-install-notice">
+                    아이폰 사용자는 브라우저 하단의 <strong>[공유]</strong> 버튼을 누른 후 <strong>'홈 화면에 추가'</strong>를 선택해 주세요! 📲
+                </div>
+                <button id="install-btn" class="hidden">
+                    <span>✨ 앱 설치하기</span>
+                </button>
+            </div>
         `;
+
+        // PWA 관련 전역 변수 설정
+        window.PWA_BASE = base;
+
+        // PWA 핸들러 동적 주입 (페이지에 없을 경우)
+        if (!document.getElementById('pwa-script')) {
+            const script = document.createElement('script');
+            script.id = 'pwa-script';
+            script.src = `${base}pwa-handler.js?v=2`;
+            document.body.appendChild(script);
+        }
+
+        // Manifest 링크 동적 주입
+        if (!document.querySelector('link[rel="manifest"]')) {
+            const link = document.createElement('link');
+            link.rel = 'manifest';
+            link.href = `${base}manifest.json`;
+            document.head.appendChild(link);
+        }
     }
 }
 
